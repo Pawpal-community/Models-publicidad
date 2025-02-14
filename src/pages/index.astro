@@ -7,6 +7,50 @@ import FAQ from "../components/sections/FAQ.astro";
 import Features from "../components/sections/Features.astro";
 import CTA from "../components/sections/CTA.astro";
 import Solutions from "../components/sections/Solutions.astro";
+import Gallery from "../components/sections/Gallery.astro";
+import { v2 as cloudinary } from 'cloudinary';
+import type { CloudinaryImage, Modelo, Folder, CloudinaryResource } from '../utils/types';
+
+
+cloudinary.config({
+  cloud_name: import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME,
+  api_key: import.meta.env.CLOUDINARY_API_KEY,
+  api_secret: import.meta.env.CLOUDINARY_API_SECRET
+});
+
+// Obtener todas las carpetas de modelos
+const { folders } = await cloudinary.api.sub_folders('San Pedro Sula');
+const images: Modelo[] = await Promise.all(
+  folders.map(async (folder: Folder) => {
+    try {
+      const encodedPath = encodeURIComponent(folder.path);
+      const { resources } = await cloudinary.api.resources({
+        type: 'upload',
+        resource_type: 'image',
+        prefix: folder.path,
+        max_results: 500
+      }) as { resources: CloudinaryResource[] };
+      console.log("resources", resources);
+      return {
+        nombre: folder.name,
+        fotos: resources.map(photo => ({
+          public_id: photo.public_id,
+          url: photo.secure_url,
+          alt: photo.context?.custom?.alt || `Foto de ${folder.name}`
+        }))
+      };
+    } catch (error) {
+      console.error(`Error en carpeta ${folder.name}:`, error);
+      return {
+        nombre: folder.name,
+        fotos: []
+      };
+    }
+  })
+);
+console.log("folders", folders);
+console.log("images", images);
+---
 ---
 
 <Layout title="Welcome to the Agency template">
@@ -16,6 +60,7 @@ import Solutions from "../components/sections/Solutions.astro";
     <Services className="py-10 md:py-16" />
     <Brands className="py-10 md:py-16" />
     <Features className="py-10 md:py-16" />
+    <Gallery className="py-10 md:py-16" images={images} />
     <FAQ className="py-10 md:py-16" />
     <CTA className="py-10 md:py-16" />
     <!-- Hero -->

@@ -1,0 +1,25 @@
+---
+interface Props {
+  publicId: string;
+  width?: number;
+  height?: number;
+  isThumbnail?: boolean;
+}
+
+const { publicId, width = 300, height = 450, isThumbnail = true } = Astro.props;
+const cloudName = import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME;
+
+const transformations = isThumbnail 
+  ? `c_fill,g_auto,w_${width},h_${height},q_auto,f_auto`
+  : `q_auto,f_auto`;
+---
+
+<img
+  src={`https://res.cloudinary.com/${cloudName}/image/upload/${transformations}/${publicId}`}
+  alt="Modelo"
+  width={width}
+  height={height}
+  loading="lazy"
+  decoding="async"
+  class="rounded-lg shadow-xl transition-all hover:scale-105"
+/>
