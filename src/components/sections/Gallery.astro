@@ -8,33 +8,44 @@ interface Props {
   className?: string;
 }
 
-const { images, className = '' } = Astro.props;
+const { images, className = "" } = Astro.props;
 ---
 
 ---
 
 <div class={`${className} container mx-auto px-4`}>
-    <div class="text-center max-w-3xl mx-auto">
+  <div class="text-center max-w-3xl mx-auto">
+    <Title>
+      Test de <GradiantText> Gallery</GradiantText>
+    </Title>
+  </div>
 
-        <Title>
-            Test de  <GradiantText> Gallery</GradiantTex> 
-            </Titl>
-        </div>
-    
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      {images.map(image => (
-    <div class="group relative">
-      <CloudinaryImage 
-        publicId={image.public_id} 
-        isThumbnail 
-        width={400} 
-        height={600}
-      />
-      
-      <!-- Overlay con info -->
-      <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
-        <p class="text-white text-center text-lg">{image.context?.custom?.alt || 'Modelo profesional'}</p>
-      </div>
-    </div>
-  ))}
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    {
+      images.map((modelo) => (
+        <section class="mb-16">
+          <h2 class="text-2xl font-bold mb-6">{modelo.nombre}</h2>
+
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {modelo.fotos.map((foto) => (
+              <img
+                src={foto.url}
+                alt={foto.alt}
+                class="rounded-lg shadow-lg hover:scale-105 transition-transform"
+                loading="lazy"
+                width="400"
+                height="600"
+              />
+              
+            ))}
+          </div>
+          <!-- Overlay con info -->
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+  <p class="text-white text-center text-lg">Modelo</p>
+</div>
+
+        </section>
+      ))
+    }
+  </div>
 </div>
