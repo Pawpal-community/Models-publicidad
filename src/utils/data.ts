@@ -1,8 +1,16 @@
 import visibilityDilemma1 from "../assets/images/Llantilandia-foto-con-banner.webp";
-import visibilityDilemma2 from "../assets/images/Foto-4-en-estadio.webp";
-import visibilityDilemma3 from "../assets/images/foto-visibility-3.webp";
-import visibilityDilemma4 from "../assets/images/foto-visibility-4.webp";
-import visibilityDilemma5 from "../assets/images/foto-visibility-5.webp";
+import visibilityDilemma2 from "../assets/images/foto-visibility-5.webp";
+import visibilityDilemma3 from "../assets/images/f-v-6.webp";
+import visibilityDilemma4 from "../assets/images/Foto-4-en-estadio.webp";
+
+// second solution images
+import solutions1 from "../assets/images/solutions-2-1_11zon.webp";
+import solutions2 from "../assets/images/solutions-2--2_11zon.webp";
+import solutions3 from "../assets/images/solutions-2-3_11zon.webp";
+import solutions4 from "../assets/images/solutions-2-5_11zon.webp";
+import solutions5 from "../assets/images/solutions-2-6_11zon.webp";
+
+
 import engagementGap from "../assets/images/engagement-gap.jpg";
 
 const services = [
@@ -64,24 +72,24 @@ const services = [
 
 const solutions = [
   {
-    title: "Dale visibilidad a tu marca",
+    title: "Dale visibilidad a tu marca o evento con nuestras edecanes",
     painPoint:
       "Tus activaciones de producto pasan desapercibidas en supermercados/estadios, sin lograr experiencias memorables para la marca.",
     agitatepainPoint:
       "Stands de degustación aburridos y banners pasivos te hacen perder valiosas oportunidades de venta. Mientras tus competidores atraen multitudes, tu marca se vuelve invisible.",
     solution:
       "¡Convertimos los espacios en escenarios para tu marca! Modelos/edecanes profesionales realizan degustaciones interactivas (como Butterball), organizan juegos con premios (éxito con FritoLay) y convierten multitudes en estadios en audiencias comprometidas con tu marca. Mira ejemplos en video.",
-      images: [visibilityDilemma1, visibilityDilemma5] // Imágenes de activaciones de producto
+      images: [visibilityDilemma1, visibilityDilemma2, visibilityDilemma3, visibilityDilemma4] // Imágenes de activaciones de producto
   },
   {
-    title: "Promociones Robóticas",
+    title: "Interacciones Auténticas que Convierten",
     painPoint:
-      "Equipos de muestreo estáticos e interacciones guionizadas no logran conexiones auténticas con los clientes.",
+      "Las degustaciones forzadas y promotores sin entrenamiento no generan conexiones reales con tu audiencia.",
     agitatepainPoint:
-      "Sonrisas forzadas y enfoques transaccionales alejan a los clientes. Necesitas embajadores de marca dinámicos que generen tanto sonrisas como ventas.",
+      "¿De qué sirve ofrecer muestras si el 80% de los clientes las recibe con indiferencia? Las interacciones robóticas destruyen tu inversión en activaciones.",
     solution:
-      "Nuestros edecanes capacitados dominan el arte de la persuasión natural, convirtiendo un 68% más de degustadores en compradores (caso de éxito con FritoLay). Míralos en acción en nuestro video de entrenamiento.",
-      images: [visibilityDilemma1], // Imagen de modelos interactuando con clientes
+      "Nuestras edecanes son especialistas en engagement real: convierten degustaciones en recuerdos memorables que tendra la gente sobre tu marca. ",
+    images: [solutions5] // Imagen: 1) Modelo riendo con cliente, 2) Capacitación de equipo
   },
   {
     title: "Inversiones Ciegas en Eventos",
