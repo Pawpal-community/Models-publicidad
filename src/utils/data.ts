@@ -1,6 +1,9 @@
-import visibilityDilemma from "../assets/images/visibility-dilemma.jpg";
+import visibilityDilemma1 from "../assets/images/Llantilandia-foto-con-banner.webp";
+import visibilityDilemma2 from "../assets/images/Foto-4-en-estadio.webp";
+import visibilityDilemma3 from "../assets/images/foto-visibility-3.webp";
+import visibilityDilemma4 from "../assets/images/foto-visibility-4.webp";
+import visibilityDilemma5 from "../assets/images/foto-visibility-5.webp";
 import engagementGap from "../assets/images/engagement-gap.jpg";
-import resultsInHibernation from "../assets/images/results-in-hibernation.jpg";
 
 const services = [
   {
@@ -61,34 +64,34 @@ const services = [
 
 const solutions = [
   {
-    title: "Visibility Dilemma",
+    title: "Dale visibilidad a tu marca",
     painPoint:
-      "Your brand is drowning in the vast sea of social media, struggling to be seen by your target audience.",
+      "Tus activaciones de producto pasan desapercibidas en supermercados/estadios, sin lograr experiencias memorables para la marca.",
     agitatepainPoint:
-      "It's disheartening when your carefully crafted content goes unnoticed. Your potential customers are out there, but they simply can't find you amidst the digital noise.",
+      "Stands de degustación aburridos y banners pasivos te hacen perder valiosas oportunidades de venta. Mientras tus competidores atraen multitudes, tu marca se vuelve invisible.",
     solution:
-      "Our targeted visibility strategies cut through the clutter, ensuring your brand is not just seen but remembered. Watch our video to see how we make your presence impossible to ignore.",
-    img: visibilityDilemma,
+      "¡Convertimos los espacios en escenarios para tu marca! Modelos/edecanes profesionales realizan degustaciones interactivas (como Butterball), organizan juegos con premios (éxito con FritoLay) y convierten multitudes en estadios en audiencias comprometidas con tu marca. Mira ejemplos en video.",
+      images: [visibilityDilemma1, visibilityDilemma5] // Imágenes de activaciones de producto
   },
   {
-    title: "Engagement Gap",
+    title: "Promociones Robóticas",
     painPoint:
-      "Despite your efforts, audience engagement remains lackluster, and interactions are not translating into meaningful connections.",
+      "Equipos de muestreo estáticos e interacciones guionizadas no logran conexiones auténticas con los clientes.",
     agitatepainPoint:
-      "It's frustrating to see competitors effortlessly engaging their audience while your brand struggles to spark conversations. Your content deserves better results, and we have the solution.",
+      "Sonrisas forzadas y enfoques transaccionales alejan a los clientes. Necesitas embajadores de marca dinámicos que generen tanto sonrisas como ventas.",
     solution:
-      "Our proven engagement tactics ignite conversations, turning passive viewers into active participants. Explore how we bridge the engagement gap in our video walkthrough.",
-    img: engagementGap,
+      "Nuestros edecanes capacitados dominan el arte de la persuasión natural, convirtiendo un 68% más de degustadores en compradores (caso de éxito con FritoLay). Míralos en acción en nuestro video de entrenamiento.",
+      images: [visibilityDilemma1], // Imagen de modelos interactuando con clientes
   },
   {
-    title: "Results in Hibernation",
+    title: "Inversiones Ciegas en Eventos",
     painPoint:
-      "Your social media efforts aren't translating into tangible results, leaving you wondering if your investment is paying off.",
+      "Financias activaciones, pero no tienes transparencia: sin pruebas de ejecución ni retorno de inversión.",
     agitatepainPoint:
-      "It's disheartening when the metrics show little growth or impact. Your time and resources are valuable, and it's time to break free from the cycle of stagnant results.",
+      "¿Los modelos realmente asistieron? ¿Los banners fueron colocados correctamente? Sin supervisión en tiempo real, estás pagando por promesas, no por resultados.",
     solution:
-      "Our data-driven approach ensures every action is purposeful, yielding measurable results. Dive into our video guide to witness how we turn social media activities into a powerful engine for your brand's success.",
-    img: resultsInHibernation,
+      "Recibe reportes de supervisión con GPS + fotos en HD en menos de 24 horas. Documentamos cada producto degustado, juego realizado y banner colocado. Mira nuestro video sobre el sistema de control.",
+      images: [visibilityDilemma1 ], // Imagen de reporte fotográfico/dashboard
   },
 ];
 

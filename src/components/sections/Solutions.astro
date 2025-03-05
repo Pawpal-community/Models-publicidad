@@ -12,7 +12,7 @@ type SolutionsProps = {
   painPoint: string;
   agitatepainPoint: string;
   solution: string;
-  img: ImageMetadata;
+  images: ImageMetadata[];
 };
 
 export interface Props {
@@ -30,6 +30,8 @@ const { className } = Astro.props;
       const bgColor = oddIndex
         ? "bg-orange-100 dark:bg-gray-800 "
         : "bg-transparent";
+      const carouselId = `carousel-${index}`;
+
       return (
         <div class={`w-100 py-10 md:py-16 ${bgColor}`}>
           <div
@@ -51,14 +53,21 @@ const { className } = Astro.props;
             </div>
 
             <div class="max-w-md mx-auto midmd:max-w-none lg:mx-0 lg:pr-10 xl:pr-2 flex-1 flex w-11/12 midmd:w-5/12 lg:w-1/2 midmd:h-auto">
-              <div class="w-full h-80 sm:h-96 midmd:h-full relative">
-                <Image
-                  src={solution.img}
-                  alt="banner image"
-                  width="1240"
-                  height="1385"
-                  class="w-auto left-1/2 -translate-x-1/2 absolute bottom-0 max-h-full rounded-3xl object-cover"
-                />
+              <div
+                id={carouselId}
+                class="w-full h-80 sm:h-96 midmd:h-full relative carousel-container"
+              >
+                {solution.images.map((image, imgIndex) => (
+                  <div class="carousel-slide absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-full opacity-0 transition-opacity duration-500">
+                    <Image
+                      src={image}
+                      alt={`${solution.title} - image ${imgIndex + 1}`}
+                      width="1240"
+                      height="1385"
+                      class="w-auto max-h-full rounded-3xl object-cover"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -67,3 +76,48 @@ const { className } = Astro.props;
     })
   }
 </section>
+
+<style>
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .carousel-slide {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .carousel-slide.active {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  // Set up image carousels
+  document.addEventListener("DOMContentLoaded", () => {
+    const carousels = document.querySelectorAll(".carousel-container");
+
+    carousels.forEach((carousel) => {
+      const slides = carousel.querySelectorAll(".carousel-slide");
+      let currentIndex = 0;
+
+      // Make first slide visible
+      if (slides.length > 0) {
+        slides[0].classList.add("active");
+      }
+
+      // Set up interval to rotate images
+      setInterval(() => {
+        // Hide current image
+        slides[currentIndex].classList.remove("active");
+
+        // Move to next image
+        currentIndex = (currentIndex + 1) % slides.length;
+
+        // Show new image
+        slides[currentIndex].classList.add("active");
+      }, 2500); // Change image every 1 second
+    });
+  });
+</script>

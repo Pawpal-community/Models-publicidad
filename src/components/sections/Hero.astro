@@ -6,7 +6,7 @@ import Paragraph from "../shared/Paragraph.astro";
 import ByNumber from "./ByNumber.astro";
 
 import myHeroImage1 from "../../assets/images/versace-scaled-hero.webp";
-import myHeroImage2 from "../../assets/images/Llantilandia-foto-con-banner.webp";
+import myHeroImage2 from "../../assets/images/foto-en-tienda.webp";
 import CtaButton from "../shared/CtaButton.astro";
 import ByResult from "./ByResult.astro";
 import GradiantText from "../shared/GradiantText.astro";
@@ -16,9 +16,6 @@ export interface Props {
 }
 
 const { className } = Astro.props;
-
-// Array of hero images to cycle through
-const heroImages = [myHeroImage1, myHeroImage2];
 ---
 
 <section class=`relative pt-32 lg:pt-36 ${className}`>
@@ -37,8 +34,8 @@ const heroImages = [myHeroImage1, myHeroImage2];
       </h1>
       <Paragraph className="mt-8 ">
         Somos especialistas en crear experiencias memorables para tu marca. Con nuestras
-        modelos y activaciones en eventos, acercamos tu producto al público de manera
-        atractiva y efectiva. ¡Contáctanos y lleva tu marca al siguiente nivel!
+  modelos y activaciones en eventos, acercamos tu producto al público de manera
+  atractiva y efectiva. ¡Contáctanos y lleva tu marca al siguiente nivel!
       </Paragraph>
 
       <div class="mt-16 w-full flex flex-col">
@@ -54,53 +51,18 @@ const heroImages = [myHeroImage1, myHeroImage2];
     <div
       class="flex flex-1 lg:w-1/2 lg:h-auto relative lg:max-w-none lg:mx-0 mx-auto max-w-3xl"
     >
-      <div class="hero-image-container relative w-full h-full">
-        {heroImages.map((image, index) => (
-          <Image
-            src={image}
-            alt={`Hero image ${index + 1}`}
-            width="2350"
-            height="2359"
-            class:list={[
-              "absolute top-0 left-0 w-full h-full rounded-3xl object-cover transition-opacity duration-1000 ease-in-out",
-              { "opacity-100": index === 0, "opacity-0": index !== 0 }
-            ]}
-          />
-        ))}
-      </div>
+      <Image
+        src={myHeroImage2}
+        alt="Hero image"
+        class="my-class"
+        width="2350"
+        height="2359"
+        class="lg:absolute lg:w-full lg:h-full rounded-3xl object-cover lg:max-h-none max-h-96"
+      />
+
     </div>
   </Container>
 
   <ByNumber />
+  <!-- <ByResult /> -->
 </section>
-
-<script>
-  // Client-side script to handle image cycling
-  document.addEventListener('DOMContentLoaded', () => {
-    const heroImageContainer = document.querySelector('.hero-image-container');
-    const heroImages = heroImageContainer?.querySelectorAll('img');
-    
-    if (heroImages && heroImages.length > 1) {
-      let currentIndex = 0;
-      
-      setInterval(() => {
-        // Remove opacity from current image
-        heroImages[currentIndex].classList.remove('opacity-100');
-        heroImages[currentIndex].classList.add('opacity-0');
-        
-        // Move to next image
-        currentIndex = (currentIndex + 1) % heroImages.length;
-        
-        // Add opacity to new image
-        heroImages[currentIndex].classList.remove('opacity-0');
-        heroImages[currentIndex].classList.add('opacity-100');
-      }, 2000); // Change image every 5 seconds
-    }
-  });
-</script>
-
-<style>
-  .hero-image-container img {
-    transition: opacity 1s ease-in-out;
-  }
-</style>
