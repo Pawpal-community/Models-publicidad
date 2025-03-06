@@ -1,4 +1,5 @@
 ---
+import ModelCard from "../cards/ModelCard.astro";
 import CloudinaryImage from "../CloudinaryImage/CloudinaryImage.astro";
 import GradiantText from "../shared/GradiantText.astro";
 import Title from "../shared/Title.astro";
@@ -8,12 +9,10 @@ interface Props {
   className?: string;
 }
 
-const { images, className = "" } = Astro.props;
+const { images} = Astro.props;
 ---
 
----
-
-<div class={`${className} container mx-auto px-4`}>
+<div class={`container mx-auto px-4`}>
   <div class="text-center max-w-3xl mx-auto">
     <Title>
       Test de <GradiantText> Gallery</GradiantText>
@@ -21,31 +20,14 @@ const { images, className = "" } = Astro.props;
   </div>
 
   <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-    {
-      images.map((modelo) => (
-        <section class="mb-16">
-          <h2 class="text-2xl font-bold mb-6">{modelo.nombre}</h2>
-
-          <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {modelo.fotos.map((foto) => (
-              <img
-                src={foto.url}
-                alt={foto.alt}
-                class="rounded-lg shadow-lg hover:scale-105 transition-transform"
-                loading="lazy"
-                width="400"
-                height="600"
-              />
-              
-            ))}
-          </div>
-          <!-- Overlay con info -->
-<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
-  <p class="text-white text-center text-lg">Modelo</p>
-</div>
-
-        </section>
-      ))
-    }
+    {images.map((modelo) => <ModelCard modelo={modelo} />)}
+  </div>
+  <div class="flex justify-center mt-4">
+    <a
+      href="/catalogo"
+      class="inline-block px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+    >
+      Ver Catálogo Completo
+    </a>
   </div>
 </div>

@@ -8,42 +8,12 @@ import Features from "../components/sections/Features.astro";
 import CTA from "../components/sections/CTA.astro";
 import Solutions from "../components/sections/Solutions.astro";
 import Gallery from "../components/sections/Gallery.astro";
-import { v2 as cloudinary } from "cloudinary";
-import type {
-  CloudinaryImage,
-  Modelo,
-  Folder,
-  CloudinaryResource,
-} from "../utils/types";
-import type { any } from "astro:schema";
+import images from "../services/cloudinaryService";
 
-// cloudinary.config({
-//   cloud_name: import.meta.env.PUBLIC_CLOUDINARY_CLOUD_NAME,
-//   api_key: import.meta.env.CLOUDINARY_API_KEY,
-//   api_secret: import.meta.env.CLOUDINARY_API_SECRET,
-// });
 
-// // Obtener todas las carpetas de modelos
-// const { folders } = await cloudinary.api.sub_folders("SanPedroSula");
 
-// const images: Modelo[] = await Promise.all(
-//   folders.map(async (folder: Folder) => {
-//     const result = await cloudinary.search
-//       .expression(`folder:${folder.path}`) // Ahora no necesita encoding
-//       .execute();
-
-//     return {
-//       nombre: folder.name.replace(/_/g, ' '), // Convierte Ana_Lucia -> Ana Lucia
-//       fotos: result.resources.map(photo  => ({
-//         public_id: photo.public_id,
-//         url: photo.secure_url
-//       }))
-//     };
-//   })
-// );
-// console.log("folders", folders);
-// console.log("images", images);
-// ---
+const cuantityModels = images.slice(0, 8);
+ 
 
 ---
 
@@ -54,7 +24,7 @@ import type { any } from "astro:schema";
     <Services className="py-10 md:py-16" />
     <Brands className="py-10 md:py-16" />
     <Features className="py-10 md:py-16" />
-    <!-- <Gallery className="py-10 md:py-16" images={images} /> -->
+    <Gallery className="py-10 md:py-16" images={cuantityModels} />
     <FAQ className="py-10 md:py-16" />
     <CTA className="py-10 md:py-16" />
     <!-- Hero -->

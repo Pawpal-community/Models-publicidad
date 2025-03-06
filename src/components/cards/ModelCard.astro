@@ -1,0 +1,12 @@
+---
+import type { Modelo } from "../../utils/types";
+import ModelCardWithModal from "../React/ModelCardWithModal";
+
+interface Props {
+  modelo: Modelo;
+}
+
+const { modelo } = Astro.props;
+---
+
+<ModelCardWithModal modelo={modelo} client:load />
