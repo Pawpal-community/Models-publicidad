@@ -11,6 +11,8 @@ export default function GaleriaModal({ isOpen, onClose, modelo }: Props) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [isImageChanging, setIsImageChanging] = useState(false);
+
+  
   
   useEffect(() => {
     if (isOpen) {
@@ -99,7 +101,7 @@ export default function GaleriaModal({ isOpen, onClose, modelo }: Props) {
             <div className={`w-full h-full transition-opacity duration-300 ease-in-out ${isImageChanging ? 'opacity-0' : 'opacity-100'}`}>
               <img 
                 src={modelo.fotos[currentIndex].url} 
-                alt={modelo.fotos[currentIndex].alt}
+                alt={modelo.nombre}
                 className="w-full h-full object-contain bg-black/30"
               />
             </div>

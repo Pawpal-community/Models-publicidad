@@ -19,12 +19,12 @@ export default function ModelCardWithModal({ modelo }: Props) {
   
   return (
     <>
-      <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl group relative cursor-pointer">
+      <div className="rounded-lg bg-box-bg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl group relative cursor-pointer border border-box-border">
         {/* Contenedor de la imagen */}
         <div className="max-h-[350px] overflow-hidden">
           <img
             src={primeraFoto.url}
-            alt={primeraFoto.alt}
+            alt= {formatearNombre(modelo.nombre) || "Foto de modelo"}
             className="w-full h-full  transition-transform duration-300 group-hover:scale-105"
             loading="lazy"
           />
@@ -39,15 +39,20 @@ export default function ModelCardWithModal({ modelo }: Props) {
         {/* Información del modelo */}
         <div className="p-4 flex flex-col justify-between h-32">
           <div>
-            <h3 className="text-lg font-semibold text-gray-800 mb-2">
+            <p className="text-lg font-semibold text-gray-800 dark:text-white mb-2">
               {formatearNombre(modelo.nombre)}
-            </h3>
+            </p>
           </div>
           
           {/* Botón para ver la galería */}
           <button 
             onClick={openModal}
-            className="mt-auto bg-[#2563eb] p-3 text-white hover:bg-blue-800 text-sm font-medium"
+            className="flex items-center justify-center gap-2 
+        bg-[#094FC3] text-white px-6 py-3 
+        rounded-full font-bold 
+        hover:bg-[#0B6052] 
+        transition-colors duration-300 ease-in-out 
+        shadow-lg group"
           >
             Ver mas fotos
           </button>

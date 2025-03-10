@@ -44,21 +44,21 @@ export interface Props {
 const { className } = Astro.props;
 ---
 
-<section class=`${className}`>
+<section class=`${className} `>
   <Container className="space-y-8">
     <div class="text-center max-w-3xl mx-auto">
       <Title>Hemos trabajado con las siguientes marcas</Title>
     </div>
-    <div class="flex justify-center flex-wrap gap-4">
+    <div class="flex justify-center flex-wrap gap-4 ">
       {
         brands.map((brand) => (
-          <div class="p-4 sm:p-5 rounded-xl border border-box-border group bg-box-bg">
+          <div class=" p-4 sm:p-5 rounded-xl border border-box-border group bg-box-bg">
             <Image
               src={brand.logo}
-              width="100"
-              height="60"
+              width={225}
+              height={225}
               alt={brand.name}
-              class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105"
+              class="h-14 sm:h-16 w-48 object-contain ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105 "
             />
           </div>
         ))
