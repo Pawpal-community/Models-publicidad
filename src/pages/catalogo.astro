@@ -1,0 +1,30 @@
+---
+import GradiantText from "../components/shared/GradiantText.astro";
+import Title from "../components/shared/Title.astro";
+import Layout from "../layouts/Layout.astro";
+import images from "../services/cloudinaryService";
+import ModelCard from "../components/cards/ModelCard.astro"
+import type { Modelo } from "../utils/types";
+
+// Asegúrate de que images sea del tipo Modelo[]
+const modelos: Modelo[] = images.map((modelo) => ({
+  nombre: modelo.nombre,
+  fotos: modelo.fotos.map((foto) => ({
+    url: foto.url,
+    alt: foto.alt || `Foto de ${modelo.nombre}`,
+  })),
+}));
+---
+
+<Layout title="Catalogo">
+  <section class="md:px-10 px-4 py-20 md:py-32">
+    <div class="container flex flex-col items-center mx-auto px-4">
+      <Title>
+        Catalogo de <GradiantText> Modelos</GradiantText>
+      </Title>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+      {modelos.map((modelo) => <ModelCard modelo={modelo} />)}
+    </div>
+  </section>
+</Layout>

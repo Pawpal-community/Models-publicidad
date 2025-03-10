@@ -7,17 +7,20 @@ export interface CloudinaryImage {
         alt?: string;
       };
     };
-    // Otras propiedades que necesites
     width?: number;
     height?: number;
     format?: string;
     created_at?: string;
   }
+
+  export interface Foto {
+    url: string;
+    alt: string;
+  }
   
   export interface Modelo {
     nombre: string;
-    thumbnail: string;
-    fotos: CloudinaryImage[];
+    fotos: Foto[];
   }
 
   export interface Folder {
