@@ -12,14 +12,14 @@ interface Props {
 const { images} = Astro.props;
 ---
 
-<div class={`container mx-auto px-4`}>
-  <div class="text-center max-w-3xl mx-auto">
+<div class={`container mx-auto px-4 md:w-[70%]`}>
+  <div class="text-center max-w-3xl mx-auto p-3">
     <Title>
-      Test de <GradiantText> Gallery</GradiantText>
+      Nuestras<GradiantText>Edecanes disponibles</GradiantText>
     </Title>
   </div>
 
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+  <div class="grid grid-cols-1 grid-center md:grid-cols-4 gap-1">
     {images.map((modelo) => <ModelCard modelo={modelo} />)}
   </div>
   <div class="flex justify-center mt-4">
