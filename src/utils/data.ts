@@ -96,58 +96,36 @@ const solutions = [
 
 const faqs = [
   {
-    question: "How can social media marketing benefit my business?",
-    answer:
-      "Social media marketing can significantly benefit your business by increasing brand awareness, engaging your target audience, driving website traffic, and generating leads. It also allows for direct interaction with your customers, fostering brand loyalty and providing valuable insights into consumer behavior.",
+    question: "¿Qué tipos de eventos pueden cubrir con sus edecanes?",
+    answer: "Cubrimos todo tipo de activaciones de marca: degustaciones interactivas en supermercados, branding en estadios deportivos, promociones en ferias comerciales, lanzamientos de producto y eventos corporativos. Nuestros paquetes son adaptables."
   },
   {
-    question: "What sets your agency apart from others?",
-    answer:
-      "Our agency stands out through a combination of tailored strategies, data-driven decision-making, and a commitment to client collaboration. We prioritize understanding your unique business goals and offer personalized solutions that deliver measurable results.",
+    question: "¿Cómo garantizan la calidad de sus edecanes?",
+    answer: "Implementamos un riguroso proceso de selección por perfil de marca + entrenamiento en técnicas de persuasión conversacional. Cada edecán recibe coaching en protocolo de marca, interacción con público y manejo de productos."
   },
   {
-    question: "How do you measure the success of social media campaigns?",
-    answer:
-      "We employ a comprehensive approach to measure campaign success. This includes tracking key performance indicators (KPIs) such as engagement metrics, conversion rates, reach, and customer feedback. Our goal is to provide you with transparent and actionable insights into the effectiveness of your social media efforts.",
+    question: "¿Qué incluyen sus reportes de supervisión?",
+    answer: "Entregamos en tiempo real: fotos HD de cada actividad, checklist de cumplimiento de branding y métricas de engagement. Como ejemplo, en nuestra activación con butterball donde dimos a degustar 200+ muestas en un dia"
+  },
+  // {
+  //   question: "¿Miden el ROI de las activaciones?",
+  //   answer: "Sí, implementamos sistemas de tracking: contabilizamos muestras distribuidas, leads captados mediante QR codes, y en eventos medimos incremento en ventas en el punto de activación. Con Butterball logramos un 23% de conversión directa."
+  // },
+  {
+    question: "¿Pueden manejar cambios de último momento?",
+    answer: "¡Absolutamente! Pero eso dependerá del tipo de cambios, si es de actividades, se les puede avisar al momento, si es de edecan, se necesita un tiempo de anticipación para poder hacer el cambio."
   },
   {
-    question:
-      "Can you give examples of your successful social media campaigns?",
-    answer:
-      "Certainly! We have a portfolio of successful campaigns across various industries. Check out our Case Studies to see how we've helped businesses like yours achieve their social media goals.",
+    question: "¿Tienen experiencia en estadios deportivos?",
+    answer: "Somos líderes en branding para eventos deportivos. Para Llantilandia activamos 15 edecanes en el Estadio Olímpico con interacciones que alcanzaron 92% de recordación de marca, documentado con fotos HD y reportes de alcance."
   },
   {
-    question: "Do you offer customized social media strategies?",
-    answer:
-      "Absolutely. Our team specializes in creating customized strategies tailored to your brand, industry, and target audience. We believe in the power of uniqueness, and our strategies reflect your specific goals and aspirations.",
+    question: "¿Qué seguridad ofrecen durante las activaciones?",
+    answer: "En todos nuestros eventos/activaciones enviamos por defecto supervisores que se encargan de monitorear el ambiente y personas del lugar, asi como el trabajo de las edecanes y reportes que se tengan que hacer a la marca o encargado."
   },
   {
-    question: "How do you handle negative comments or reviews on social media?",
-    answer:
-      "We have a proactive approach to managing online reputation. Our social listening tools help us monitor brand mentions in real-time. In case of negative comments, we respond promptly with empathy and seek resolutions. We believe in turning challenges into opportunities for improvement.",
-  },
-  {
-    question: "What social media platforms do you work with?",
-    answer:
-      "We work with a wide range of social media platforms, including but not limited to Facebook, Instagram, Twitter, LinkedIn, Pinterest, and TikTok. Our strategies are adaptable to the platforms most relevant to your target audience.",
-  },
-  {
-    question:
-      "How often will I receive reports on the performance of my social media campaigns?",
-    answer:
-      "We provide regular and detailed reports on the performance of your social media campaigns. The frequency of reporting can be customized based on your preferences, with options for weekly, bi-weekly, or monthly updates.",
-  },
-  {
-    question:
-      "Is there ongoing support if I have questions or need adjustments to my strategy?",
-    answer:
-      "Absolutely. We offer ongoing support to address any questions or concerns you may have. Our team is readily available to assist you and can make adjustments to your strategy as needed to ensure it aligns with your evolving business goals.",
-  },
-  {
-    question:
-      "Can I see a demo or get a consultation before deciding to work with your agency?",
-    answer:
-      "Certainly! We offer free consultations and personalized demos to showcase our approach, discuss your needs, and determine how we can best support your business. Contact us to schedule a consultation.",
+    question: "¿Qué necesito para contratar sus servicios?",
+    answer: "Solo necesitamos: 1) Brief de marca 2) Fechas y ubicaciones 3) Objetivos específicos. Nosotros desarrollamos una propuesta estratégica con mockups de activación y presupuesto detallado en menos de 48h."
   },
 ];
 
