@@ -38,9 +38,9 @@ const { className } = Astro.props;
             class={`flex flex-col gap-10 lg:gap-12 ${flexRow} mx-auto max-w-7xl w-full`}
           >
             <div class="max-w-md mx-auto w-11/12 flex-1 flex midmd:w-7/12 lg:w-1/2 flex-col">
-              <Title>
+              <h2 class="text-heading-1 font-semibold text-2xl sm:text-3xl md:text-4xl">
                 <GradiantText>{solution.title}</GradiantText>
-              </Title>
+              </h2>
               <Paragraph className="mt-8 font-medium text:lg md:text-2xl">
                 {solution.painPoint}
               </Paragraph>

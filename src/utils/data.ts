@@ -63,7 +63,7 @@ const services = [
 
 const solutions = [
   {
-    title: "Dale visibilidad a tu marca o evento con nuestras edecanes",
+    title: "Dale visibilidad a tu marca o evento con nuestras modelos/edecanes",
     painPoint:
       "Tus activaciones de producto pasan desapercibidas en supermercados/estadios, sin lograr experiencias memorables para la marca.",
     agitatepainPoint:
