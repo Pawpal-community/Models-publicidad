@@ -14,7 +14,7 @@ const { images} = Astro.props;
 
 <section id="gallery" class={`container mx-auto px-4 md:w-[70%]`}>
   <div class="text-center max-w-3xl mx-auto p-3">
-    <h2 class="`text-heading-1 font-semibold text-2xl sm:text-3xl md:text-4x">Catálogo de Modelos para <GradiantText>Impulsación de Marcas y Eventos</GradiantText></h2>2  </div>
+    <h2 class="`text-heading-1 font-semibold text-2xl sm:text-3xl md:text-4x">Catálogo de Modelos para <GradiantText>Impulsación de Marcas y Eventos</GradiantText></h2></div>
 
   <div class="grid grid-cols-1 grid-center md:grid-cols-4 gap-1">
     {images.map((modelo) => <ModelCard modelo={modelo} />)}
