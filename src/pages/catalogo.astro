@@ -18,15 +18,18 @@ const modelos: Modelo[] = images.map((modelo) => ({
 ---
 
 <Layout title="Catalogo">
-  <section class="md:px-10 px-4 py-20 md:py-32">
+  <section class="md:px-10 w-[90%] max-w-[450px] md:max-w-[none] mx-auto lg:max-w-[1600px] px-4 py-20 md:py-32">
     <div class="container flex flex-col items-center mx-auto px-4 gap-3">
       <Title>
         Catálogo de Modelos y Edecanes<GradiantText>Para realizar Eventos y Activaciones</GradiantText>
       </Title>
       <BtnLink href="/#gallery" text="volver atras" variant="primary" />
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mt-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
       {modelos.map((modelo) => <ModelCard modelo={modelo} />)}
+    </div>
+    <div class="container flex flex-col items-center mx-auto pt-6">
+      <BtnLink href="/#gallery" text="volver atras" variant="primary" />
     </div>
   </section>
 </Layout>
