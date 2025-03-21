@@ -21,7 +21,7 @@ export default function ModelCardWithModal({ modelo }: Props) {
     <>
       <div className="rounded-lg bg-box-bg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl group relative cursor-pointer border border-box-border">
         {/* Contenedor de la imagen */}
-        <div className="max-h-[350px] overflow-hidden">
+        <div className="max-h-[320px] overflow-hidden">
           <img
             src={primeraFoto.url}
             alt= {`foto de la modelo o edecan ${formatearNombre(modelo.nombre)}` || "Foto de modelo o edecan"}

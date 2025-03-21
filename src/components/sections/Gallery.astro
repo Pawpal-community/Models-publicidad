@@ -1,31 +1,39 @@
 ---
 import ModelCard from "../cards/ModelCard.astro";
-import CloudinaryImage from "../CloudinaryImage/CloudinaryImage.astro";
 import GradiantText from "../shared/GradiantText.astro";
-import Title from "../shared/Title.astro";
 
 interface Props {
   images: any[];
   className?: string;
 }
 
-const { images} = Astro.props;
+const { images } = Astro.props;
 ---
 
-<section id="gallery" class={`container mx-auto px-4 md:w-[70%]`}>
+<section id="gallery" class="container mx-auto px-4 md:w-[70%]">
   <div class="text-center max-w-3xl mx-auto p-3">
-    <h2 class="`text-heading-1 font-semibold text-2xl sm:text-3xl md:text-4x">Catálogo de Modelos para <GradiantText>Impulsación de Marcas y Eventos</GradiantText></h2></div>
-
-  <div class="grid grid-cols-1 grid-center md:grid-cols-4 gap-1">
-    {images.map((modelo) => <ModelCard modelo={modelo} />)}
+    <h2 class="text-heading-1 font-semibold text-2xl sm:text-3xl md:text-4xl">
+      Catálogo de Modelos para <GradiantText>Impulsación de Marcas y Eventos</GradiantText>
+    </h2>
   </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    {images.slice(0, 8).map((modelo, index) => (
+      <div class={`
+        ${index >= 5 ? "max-sm:sr-only max-sm:h-0 max-sm:overflow-hidden" : ""} 
+        ${index >= 6 ? "max-md:sr-only max-md:h-0 max-md:overflow-hidden" : ""}
+      `}>
+        <ModelCard modelo={modelo} />
+      </div>
+    ))}
+  </div>
+
   <div class="flex justify-center mt-4">
     <a
       href="/catalogo"
-      class="inline-block px-6 py-3  bg-[#094FC3] text-white rounded-lg hover:bg-[#000094] transition-colors"
+      class="inline-block px-6 py-3 bg-[#094FC3] text-white rounded-lg hover:bg-[#000094] transition-colors"
     >
       Ver Catálogo Completo
     </a>
   </div>
-  </section>
-</div>
+</section>
