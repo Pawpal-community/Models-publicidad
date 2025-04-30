@@ -8,13 +8,10 @@ import Features from "../components/sections/Features.astro";
 import CTA from "../components/sections/CTA.astro";
 import Solutions from "../components/sections/Solutions.astro";
 import Gallery from "../components/sections/Gallery.astro";
+import Uniforms from "../components/sections/Uniforms.astro";
 import images from "../services/cloudinaryService";
 
-
-
 const cuantityModels = images.slice(0, 8);
- 
-
 ---
 
 <Layout title="Bienvenido a Models Publicidad">
@@ -22,6 +19,7 @@ const cuantityModels = images.slice(0, 8);
     <Hero className="py-10 md:py-16" />
     <Solutions className="pt-10 md:pt-16" />
     <Services className="py-10 md:py-16" />
+    <!-- <Uniforms className="py-10 md:py-16" /> -->
     <Brands className="py-10 md:py-16" />
     <Gallery className="py-10 md:py-16" images={cuantityModels} />
     <FAQ className="py-10 md:py-16" />

@@ -1,0 +1,80 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Service from "../cards/Service.astro";
+
+const uniformServices = [
+  {
+    title: "Diseño de Uniformes Corporativos",
+    features: [
+      "Diseño personalizado según identidad de marca",
+      "Materiales de alta calidad y durabilidad",
+      "Opciones para diferentes estaciones del año",
+      "Adaptación a necesidades específicas de la empresa",
+    ],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+    </svg>`,
+  },
+  {
+    title: "Uniformes para Eventos Especiales",
+    features: [
+      "Uniformes para activaciones de marca",
+      "Diseños exclusivos para eventos corporativos",
+      "Opciones para promociones y lanzamientos",
+      "Uniformes temáticos para ocasiones especiales",
+    ],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+    </svg>`,
+  },
+  {
+    title: "Uniformes para Edecanes",
+    features: [
+      "Diseños elegantes y profesionales",
+      "Materiales cómodos y resistentes",
+      "Opciones para diferentes tipos de eventos",
+      "Personalización con logos y colores de marca",
+    ],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>`,
+  },
+];
+---
+
+<section class="py-10 md:py-16">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-heading-1 mb-4">
+        Uniformes Personalizados para tu Marca
+      </h2>
+      <p class="text-lg text-heading-3 max-w-3xl mx-auto">
+        Creamos uniformes de alta calidad que refuerzan la identidad de tu marca
+        y proporcionan comodidad a tu personal. Nuestros diseños personalizados
+        son perfectos para eventos corporativos, activaciones de marca y uso
+        diario.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        uniformServices.map((service) => (
+          <Service
+            title={service.title}
+            features={service.features}
+            icon={service.icon}
+          />
+        ))
+      }
+    </div>
+
+    <!-- <div class="mt-12 text-center">
+      <a
+        href="/contacto"
+        class="inline-block bg-primary hover:bg-primary-dark text-white font-medium py-3 px-8 rounded-lg transition-colors duration-300"
+      >
+        Solicita un Presupuesto para tus Uniformes
+      </a>
+    </div> -->
+  </div>
+</section>
