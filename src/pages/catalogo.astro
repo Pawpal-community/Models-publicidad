@@ -10,6 +10,7 @@ import BtnLink from "../components/shared/BtnLink.astro";
 // Asegúrate de que images sea del tipo Modelo[]
 const modelos: Modelo[] = images.map((modelo) => ({
   nombre: modelo.nombre,
+  ciudad: modelo.ciudad,
   fotos: modelo.fotos.map((foto) => ({
     url: foto.url,
     alt: foto.alt || `Foto de ${modelo.nombre}`,

@@ -12,20 +12,23 @@ cloudinary.config({
   api_secret: import.meta.env.CLOUDINARY_API_SECRET,
 });
 
-// Lista de ciudades disponibles
-const CIUDADES = [
-  "SanPedroSula",
-  "Tegucigalpa",
-  // "LaCeiba",
-  // "Choloma",
-  // "ElProgreso"
-  // Añade más ciudades aquí según necesites
-];
+// Lista de carpetas de ciudades disponibles (nombres exactos en Cloudinary)
+
+// Mapeo de carpetas de Cloudinary a nombres de ciudades
+const CIUDAD_MAPPING: Record<string, string> = {
+  "SanPedroSula": "San Pedro Sula",
+  "Tegucigalpa": "Tegucigalpa",
+  // "LaCeiba": "La Ceiba",
+  // "Choloma": "Choloma",
+  // "ElProgreso": "El Progreso"
+};
+const CARPETAS_CIUDADES = Object.keys(CIUDAD_MAPPING);
 
 // Función para obtener modelos de una ciudad específica
-async function getModelosPorCiudad(ciudad: string): Promise<Modelo[]> {
+async function getModelosPorCiudad(carpetaCiudad: string): Promise<Modelo[]> {
   try {
-    const { folders } = await cloudinary.api.sub_folders(ciudad);
+    const { folders } = await cloudinary.api.sub_folders(carpetaCiudad);
+    const nombreCiudad = CIUDAD_MAPPING[carpetaCiudad] || carpetaCiudad;
     
     const modelos: Modelo[] = await Promise.all(
       folders.map(async (folder: Folder) => {
@@ -35,7 +38,9 @@ async function getModelosPorCiudad(ciudad: string): Promise<Modelo[]> {
 
         return {
           nombre: folder.name.replace(/_/g, ' '),
-          ciudad: ciudad.replace(/([A-Z])/g, ' $1').trim(), // Convierte "SanPedroSula" a "San Pedro Sula"
+          ciudad: nombreCiudad,
+          carpetaOrigen: carpetaCiudad, // Nombre exacto de la carpeta en Cloudinary
+          rutaCompleta: folder.path, // Ruta completa: "SanPedroSula/Maria_Rodriguez"
           fotos: result.resources.map((photo: CloudinaryImage) => ({
             public_id: photo.public_id,
             url: photo.secure_url
@@ -46,7 +51,7 @@ async function getModelosPorCiudad(ciudad: string): Promise<Modelo[]> {
 
     return modelos;
   } catch (error) {
-    console.error(`Error obteniendo modelos de ${ciudad}:`, error);
+    console.error(`Error obteniendo modelos de ${carpetaCiudad}:`, error);
     return [];
   }
 }
@@ -55,7 +60,7 @@ async function getModelosPorCiudad(ciudad: string): Promise<Modelo[]> {
 async function getTodosLosModelos(): Promise<Modelo[]> {
   try {
     const todasLasModelos = await Promise.all(
-      CIUDADES.map(ciudad => getModelosPorCiudad(ciudad))
+      CARPETAS_CIUDADES.map(carpeta => getModelosPorCiudad(carpeta))
     );
     
     return todasLasModelos.flat();
@@ -71,10 +76,10 @@ async function getModelosAgrupadasPorCiudad(): Promise<Record<string, Modelo[]>>
     const resultado: Record<string, Modelo[]> = {};
     
     await Promise.all(
-      CIUDADES.map(async (ciudad) => {
-        const modelos = await getModelosPorCiudad(ciudad);
-        const ciudadLimpia = ciudad.replace(/([A-Z])/g, ' $1').trim();
-        resultado[ciudadLimpia] = modelos;
+      CARPETAS_CIUDADES.map(async (carpeta) => {
+        const modelos = await getModelosPorCiudad(carpeta);
+        const nombreCiudad = CIUDAD_MAPPING[carpeta];
+        resultado[nombreCiudad] = modelos;
       })
     );
     
@@ -91,10 +96,10 @@ async function getEstadisticasPorCiudad(): Promise<Record<string, number>> {
     const estadisticas: Record<string, number> = {};
     
     await Promise.all(
-      CIUDADES.map(async (ciudad) => {
-        const modelos = await getModelosPorCiudad(ciudad);
-        const ciudadLimpia = ciudad.replace(/([A-Z])/g, ' $1').trim();
-        estadisticas[ciudadLimpia] = modelos.length;
+      CARPETAS_CIUDADES.map(async (carpeta) => {
+        const modelos = await getModelosPorCiudad(carpeta);
+        const nombreCiudad = CIUDAD_MAPPING[carpeta];
+        estadisticas[nombreCiudad] = modelos.length;
       })
     );
     
@@ -105,10 +110,22 @@ async function getEstadisticasPorCiudad(): Promise<Record<string, number>> {
   }
 }
 
+// Función auxiliar para obtener modelos por nombre de ciudad (no carpeta)
+async function getModelosPorNombreCiudad(nombreCiudad: string): Promise<Modelo[]> {
+  const carpeta = Object.entries(CIUDAD_MAPPING).find(([_, nombre]) => nombre === nombreCiudad)?.[0];
+  if (!carpeta) {
+    console.warn(`No se encontró carpeta para la ciudad: ${nombreCiudad}`);
+    return [];
+  }
+  return getModelosPorCiudad(carpeta);
+}
+
 // Exportar funciones
 export {
-  CIUDADES,
+  CARPETAS_CIUDADES,
+  CIUDAD_MAPPING,
   getModelosPorCiudad,
+  getModelosPorNombreCiudad,
   getTodosLosModelos,
   getModelosAgrupadasPorCiudad,
   getEstadisticasPorCiudad
