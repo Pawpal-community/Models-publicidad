@@ -75,6 +75,9 @@ export default function GaleriaModal({ isOpen, onClose, modelo }: Props) {
         <h2 className="text-white text-xl md:text-2xl font-bold mb-4 text-center">
           {modelo.nombre.split(/(?=[A-ZÁÉÍÓÚ])/).join(" ")}
         </h2>
+        <p className="text-sm md:text-base mb-4 text-center">
+          {modelo.ciudad}
+        </p>
         
         <div className="flex flex-col md:flex-row gap-4 h-[calc(100%-4rem)] overflow-hidden">
           {/* Miniaturas a la izquierda (en pantallas medianas y grandes) */}

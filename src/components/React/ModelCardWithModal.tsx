@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import GaleriaModal from './GaleriaModal';
+import { Image } from 'astro:assets';
 import type { Modelo } from '../../utils/types';
 
 interface Props {
@@ -9,6 +10,8 @@ interface Props {
 export default function ModelCardWithModal({ modelo }: Props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const primeraFoto = modelo.fotos[0];
+
+  console.log(primeraFoto)
   
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
@@ -19,9 +22,9 @@ export default function ModelCardWithModal({ modelo }: Props) {
   
   return (
     <>
-      <div className="rounded-lg bg-box-bg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl group relative cursor-pointer border border-box-border">
+      <div className="rounded-lg bg-box-bg shadow-md transition-all duration-300 hover:shadow-xl group relative cursor-pointer border border-box-border">
         {/* Contenedor de la imagen */}
-        <div className="md:max-h-[270px] overflow-hidden">
+        <div className="md:max-h-[300px] overflow-hidden">
           <img
             src={primeraFoto.url}
             alt= {`foto de la modelo o edecan ${formatearNombre(modelo.nombre)}` || "Foto de modelo o edecan"}
@@ -37,10 +40,13 @@ export default function ModelCardWithModal({ modelo }: Props) {
         </div>
         
         {/* Información del modelo */}
-        <div className="p-4 flex flex-col justify-between h-32">
+        <div className="p-4 flex flex-col justify-between">
           <div>
             <p className="text-lg font-semibold text-gray-800 dark:text-white mb-2">
               {formatearNombre(modelo.nombre)}
+            </p>
+            <p className="text-lg font-semibold text-gray-800 dark:text-white mb-2">
+              {modelo.ciudad}
             </p>
           </div>
           
