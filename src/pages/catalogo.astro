@@ -3,9 +3,9 @@ import GradiantText from "../components/shared/GradiantText.astro";
 import Title from "../components/shared/Title.astro";
 import Layout from "../layouts/Layout.astro";
 import images from "../services/cloudinaryService";
-import ModelCard from "../components/cards/ModelCard.astro"
 import type { Modelo } from "../utils/types";
 import BtnLink from "../components/shared/BtnLink.astro";
+import CatalogoWithFilter from "../components/React/CatalogoWithFilter";
 
 // Asegúrate de que images sea del tipo Modelo[]
 const modelos: Modelo[] = images.map((modelo) => ({
@@ -26,9 +26,10 @@ const modelos: Modelo[] = images.map((modelo) => ({
       </Title>
       <BtnLink href="/#gallery" text="volver atras" variant="primary" />
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 mt-10">
-      {modelos.map((modelo) => <ModelCard modelo={modelo} />)}
-    </div>
+    
+    <!-- Componente React con filtros para el catálogo completo -->
+    <CatalogoWithFilter modelos={modelos} client:load />
+    
     <div class="container flex flex-col items-center mx-auto pt-6">
       <BtnLink href="/#gallery" text="volver atras" variant="primary" />
     </div>
