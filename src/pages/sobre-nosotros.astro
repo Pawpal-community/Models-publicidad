@@ -3,6 +3,10 @@ import Layout from "../layouts/Layout.astro";
 import Title from "../components/shared/Title.astro";
 import Paragraph from "../components/shared/Paragraph.astro";
 import Image from "astro/components/Image.astro";
+import Container from "../components/shared/Container.astro";
+import heroImgage from "../assets/images/foto-en-tienda.webp";
+import GradiantText from "../components/shared/GradiantText.astro";
+import Portafolio from "../components/sections/Portafolio.astro";
 export interface Props {
   className?: string;
 }
@@ -12,12 +16,31 @@ const { className } = Astro.props;
 
 <Layout title="Sobre Nosotros - Models Publicidad">
   <section class="md:px-10 w-[90%] max-w-[450px] md:max-w-[none] mx-auto lg:max-w-[1600px] px-4 py-20 md:py-32">
-    <div class="container flex flex-col items-center mx-auto px-4 gap-3">
-      <Title>Sobre Models Publicidad</Title>
-    </div>
-    <div class="container flex flex-col items-center mx-auto pt-6">
-      <Paragraph className=`text-center max-w-3xl ${className}`>
-        En Models Publicidad, somos una agencia especializada a proporcionar modelos y edecanes profesionales para eventos y activaciones en toda Honduras. Con mas de 10 años de experiencia en la industria, nos enorgullece ofrecer un servicio excepcional que conecta a nuestros clientes con el talento adecuado para hacer que sus eventos sean inolvidables.
+      <Container className={"flex flex-col items-center lg:items-center lg:flex-row gap-10 lg:gap-12"}>
+    <div
+      class="relative flex flex-col items-center text-center lg:text-left lg:py-7 xl:py-8
+        lg:items-start lg:max-w-none max-w-3xl mx-auto lg:mx-0 lg:flex-1 lg:w-1/2"
+    >
+    <Title>
+     Sobre <GradiantText>Models Publicidad</GradiantText> 
+    </Title>  
+      <Paragraph className="mt-8 ">
+        En Models Publicidad, somos una agencia especializada a proporcionar modelos y edecanes profesionales para eventos y activaciones en toda Honduras. Con mas de 7 años de experiencia en la industria, nos enorgullece ofrecer <GradiantText>un servicio excepcional</GradiantText> que conecta a nuestros clientes con el talento adecuado para hacer que sus eventos sean inolvidables. 
       </Paragraph>
     </div>
-  </section>
+
+    <div
+      class="flex flex-1 lg:w-1/2 lg:h-auto relative lg:max-w-none lg:mx-0 mx-auto max-w-3xl"
+    >
+      <Image
+        src={heroImgage}
+        alt="Edecanes profesionales en Honduras promocionando marcas"
+        class="my-class"
+        width="2350"
+        height="2359"
+        class="lg:w-full lg:h-full rounded-3xl object-cover"
+      />
+
+    </div>
+        <Portafolio />
+  </Container> 
