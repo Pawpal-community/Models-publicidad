@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Title from "../components/shared/Title.astro";
+import Paragraph from "../components/shared/Paragraph.astro";
+import Image from "astro/components/Image.astro";
+export interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<Layout title="Sobre Nosotros">
+  <section class="md:px-10 w-[90%] max-w-[450px] md:max-w-[none] mx-auto lg:max-w-[1600px] px-4 py-20 md:py-32">
+    <div class="container flex flex-col items-center mx-auto px-4 gap-3">
+      <Title>Sobre Models Publicidad</Title>
+    </div>
+    <div class="container flex flex-col items-center mx-auto pt-6">
+      <Paragraph className=`text-center max-w-3xl ${className}`>
+        En Models Publicidad, somos una agencia especializada a proporcionar modelos y edecanes profesionales para eventos y activaciones en toda Honduras. Con mas de 10 años de experiencia en la industria, nos enorgullece ofrecer un servicio excepcional que conecta a nuestros clientes con el talento adecuado para hacer que sus eventos sean inolvidables.
+      </Paragraph>
+    </div>
+  </section>
