@@ -15,7 +15,7 @@ const { className } = Astro.props;
 ---
 
 <Layout title="Sobre Nosotros - Models Publicidad">
-  <section class="md:px-10 w-[90%] max-w-[450px] md:max-w-[none] mx-auto lg:max-w-[1600px] px-4 py-20 md:py-32">
+  <div class="md:px-10 w-[90%] max-w-[450px] md:max-w-[none] mx-auto lg:max-w-[1600px] px-4 py-20 md:py-32">
       <Container className={"flex flex-col items-center lg:items-center lg:flex-row gap-10 lg:gap-12"}>
     <div
       class="relative flex flex-col items-center text-center lg:text-left lg:py-7 xl:py-8
@@ -42,5 +42,7 @@ const { className } = Astro.props;
       />
 
     </div>
-        <Portafolio />
-  </Container> 
+</Container> 
+<Portafolio />
+    </div>
+</Layout>

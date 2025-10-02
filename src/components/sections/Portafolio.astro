@@ -1,6 +1,41 @@
 ---
+import Container from "../shared/Container.astro";
+import GradiantText from "../shared/GradiantText.astro";
+import Image from "astro/components/Image.astro";
+import Paragraph from "../shared/Paragraph.astro";
+import PortafolioSection from "../shared/Portafolio-section.astro";
+export interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+
+import llantilandia1 from "../../assets/portafolio/llantilandia/llantilandia-portafolio1.jpg";
+import llantilandia2 from "../../assets/portafolio/llantilandia/llantilandia-portafolio2.jpg";
+import llantilandia3 from "../../assets/portafolio/llantilandia/llantilandia-portafolio3.jpg";
+
+import superbarato1 from "../../assets/portafolio/superbarato/superbarato-portafolio1.jpg";
+import superbarato2 from "../../assets/portafolio/superbarato/superbarato-portafolio2.jpg";
+import superbarato3 from "../../assets/portafolio/superbarato/superbarato-portafolio3.jpg";
 ---
 
-<div>
-    <h2>portafolio title</h2>
-</div>
+<Container className="mt-10">
+  <h2 class="text-heading-1 text-center font-semibold text-2xl sm:text-3xl md:text-4xl">
+    portafolio y resumen de nuestro trabajo en <GradiantText
+      >Models Publicidad</GradiantText
+    >
+  </h2>
+  <ul>
+    <PortafolioSection
+    title="LLantilandia"
+    images={
+        [
+            { src: llantilandia1, alt: "Edecanes promocionando llantilandia" },
+            { src: llantilandia3, alt: "Edecanes promocionando llantilandia" },
+            { src: llantilandia2, alt: "Edecanes promocionando llantilandia" },
+        ]
+    }
+    />
+
+  </ul>
+</Container>
