@@ -11,14 +11,14 @@ export interface Props {
 const { title, images } = Astro.props;
 ---
 
-<li>
+<li class="">
   <Paragraph
-    className="mt-4 text-center text-base md:text-lg max-w-3xl mx-auto"
+    className=" text-center text-base mt-10 md:text-lg max-w-3xl mx-auto font-semibold text-gray-800 dark:text-gray-200"
   >
     {title}
   </Paragraph>
 
-  <div class="flex lg:flex-row flex-col gap-4 lg:gap-8 mt-6 lg:mt-10 items-center justify-center">
+  <div class="flex lg:flex-row flex-col gap-4 lg:gap-8  items-center justify-center">
     {images.map((image) => (
       <Image
         src={image.src}

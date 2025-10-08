@@ -20,22 +20,29 @@ import superbarato3 from "../../assets/portafolio/superbarato/superbarato-portaf
 ---
 
 <Container className="mt-10">
-  <h2 class="text-heading-1 text-center font-semibold text-2xl sm:text-3xl md:text-4xl">
+  <h2
+    class="text-heading-1 text-center font-semibold text-2xl sm:text-3xl md:text-4xl"
+  >
     portafolio y resumen de nuestro trabajo en <GradiantText
       >Models Publicidad</GradiantText
     >
   </h2>
   <ul>
     <PortafolioSection
-    title="LLantilandia"
-    images={
-        [
-            { src: llantilandia1, alt: "Edecanes promocionando llantilandia" },
-            { src: llantilandia3, alt: "Edecanes promocionando llantilandia" },
-            { src: llantilandia2, alt: "Edecanes promocionando llantilandia" },
-        ]
-    }
+      title="LLantilandia"
+      images={[
+        { src: llantilandia1, alt: "Edecanes promocionando llantilandia" },
+        { src: llantilandia3, alt: "Edecanes promocionando llantilandia" },
+        { src: llantilandia2, alt: "Edecanes promocionando llantilandia" },
+      ]}
     />
-
+    <PortafolioSection
+      title="Superbarato"
+      images={[
+        { src: superbarato2, alt: "Edecanes promocionando superbarato" },
+        { src: superbarato1, alt: "Edecanes promocionando superbarato" },
+        { src: superbarato3, alt: "Edecanes promocionando superbarato" },
+      ]}
+    />
   </ul>
 </Container>
