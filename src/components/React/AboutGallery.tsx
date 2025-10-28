@@ -32,7 +32,7 @@ export default function Gallery({ images }: GalleryProps) {
         {images
           // Mobile → show 8 (4x2)
           // Desktop → show 16 (8x2)
-          .slice(0, window.innerWidth < 640 ? 8 : 16)
+          .slice(0, window.innerWidth < 640 ? 8 : 8)
           .map((img, index) => (
             <img
               key={index}
@@ -43,6 +43,7 @@ export default function Gallery({ images }: GalleryProps) {
                 w-full h-24 sm:h-32
                 rounded-lg cursor-pointer
                 hover:opacity-80 transition
+                md:object-center
               "
               onClick={() => openModal(index)}
             />
