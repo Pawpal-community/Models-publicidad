@@ -13,7 +13,7 @@ const { title, images } = Astro.props;
 
 <li class="">
   <Paragraph
-    className=" text-center font-bold text-base mt-10 md:text-lg lg:text-2xl max-w-3xl mx-auto text-gray-800 dark:text-gray-200"
+    className=" text-center font-bold text-base text:lg mt-10 md:text-lg lg:text-2xl max-w-3xl mx-auto text-gray-800 dark:text-gray-200"
   >
     {title}
   </Paragraph>
@@ -23,7 +23,7 @@ const { title, images } = Astro.props;
       <Image
         src={image.src}
         alt={image.alt}
-        class="lg:w-full max-h-[450px] rounded-3xl object-fill mt-4"
+        class="lg:w-full max-h-[450px] rounded-3xl object-cover object-top mt-4"
       />
     ))}
   </div>

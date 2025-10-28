@@ -1,9 +1,11 @@
 ---
 import Container from "../shared/Container.astro";
 import GradiantText from "../shared/GradiantText.astro";
+import AboutGallery from "../React/AboutGallery.tsx";
 import Image from "astro/components/Image.astro";
 import Paragraph from "../shared/Paragraph.astro";
 import PortafolioSection from "../shared/Portafolio-section.astro";
+
 export interface Props {
   className?: string;
 }
@@ -13,6 +15,8 @@ const { className } = Astro.props;
 import llantilandia1 from "../../assets/portafolio/llantilandia/llantilandia-portafolio1.jpg";
 import llantilandia2 from "../../assets/portafolio/llantilandia/llantilandia-portafolio2.jpg";
 import llantilandia3 from "../../assets/portafolio/llantilandia/llantilandia-portafolio3.jpg";
+import llantilandia4 from "../../assets/portafolio/llantilandia/llantilandia-portafolio4.jpg";
+import llantilandia5 from "../../assets/portafolio/llantilandia/llantilandia-portafolio5.jpg";
 
 import superbarato1 from "../../assets/portafolio/superbarato/superbarato-portafolio1.jpg";
 import superbarato2 from "../../assets/portafolio/superbarato/superbarato-portafolio2.jpg";
@@ -25,26 +29,23 @@ import innova3 from "../../assets/portafolio/innova/innova-portafolio3.jpg";
 import tropigas1 from "../../assets/portafolio/tropigas/tropigas-portafolio1.jpg";
 import tropigas2 from "../../assets/portafolio/tropigas/tropigas-portafolio2.jpg";
 import tropigas3 from "../../assets/portafolio/tropigas/tropigas-portafolio3.jpg";
-
-
-
 ---
 
 <Container className="mt-10">
   <h2
     class="text-heading-1 text-center font-semibold text-2xl sm:text-3xl md:text-4xl"
   >
-    portafolio y resumen de nuestro trabajo en <GradiantText
-      >Models Publicidad</GradiantText
-    >
+    portafolio y resumen de nuestro trabajo en
+    <GradiantText>Models Publicidad</GradiantText>
   </h2>
+
   <ul>
     <PortafolioSection
       title="LLantilandia"
       images={[
         { src: llantilandia1, alt: "Edecanes promocionando llantilandia" },
-        { src: llantilandia3, alt: "Edecanes promocionando llantilandia" },
-        { src: llantilandia2, alt: "Edecanes promocionando llantilandia" },
+        { src: llantilandia4, alt: "Edecanes promocionando llantilandia" },
+        { src: llantilandia5, alt: "Edecanes promocionando llantilandia" },
       ]}
     />
     <PortafolioSection
@@ -61,13 +62,41 @@ import tropigas3 from "../../assets/portafolio/tropigas/tropigas-portafolio3.jpg
         { src: innova1, alt: "Edecanes promocionando innova" },
         { src: innova2, alt: "Edecanes promocionando innova" },
         { src: innova3, alt: "Edecanes promocionando innova" },
-      ]} />
+      ]}
+    />
     <PortafolioSection
       title="Tropigas"
       images={[
         { src: tropigas1, alt: "Edecanes promocionando tropigas" },
         { src: tropigas2, alt: "Edecanes promocionando tropigas" },
         { src: tropigas3, alt: "Edecanes promocionando tropigas" },
-      ]} />
+      ]}
+    />
   </ul>
+
+  <div class="mt-10">
+    <Paragraph className="text-center font-medium">
+      Con ganas de ver más?
+    </Paragraph>
+    <h3 class="text-xl sm:text-2xl font-semibold mb-4 text-center">
+      Galería de eventos y activaciones de models publicidad
+    </h3>
+    <AboutGallery
+      client:load
+      images={[
+        { src: llantilandia1.src, alt: "Edecanes promocionando llantilandia" },
+        { src: llantilandia2.src, alt: "Edecanes promocionando llantilandia" },
+        { src: llantilandia3.src, alt: "Edecanes promocionando llantilandia" },
+        { src: superbarato1.src, alt: "Edecanes promocionando superbarato" },
+        { src: superbarato2.src, alt: "Edecanes promocionando superbarato" },
+        { src: superbarato3.src, alt: "Edecanes promocionando superbarato" },
+        { src: innova1.src, alt: "Edecanes promocionando innova" },
+        { src: innova2.src, alt: "Edecanes promocionando innova" },
+        { src: innova3.src, alt: "Edecanes promocionando innova" },
+        { src: tropigas1.src, alt: "Edecanes promocionando tropigas" },
+        { src: tropigas2.src, alt: "Edecanes promocionando tropigas" },
+        { src: tropigas3.src, alt: "Edecanes promocionando tropigas" },
+      ]}
+    />
+  </div>
 </Container>
