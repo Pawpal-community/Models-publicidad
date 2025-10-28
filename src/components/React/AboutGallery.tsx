@@ -15,8 +15,7 @@ export default function Gallery({ images }: GalleryProps) {
 
   const closeModal = () => setOpen(false);
 
-  const nextImage = () =>
-    setCurrentIndex((prev) => (prev + 1) % images.length);
+  const nextImage = () => setCurrentIndex((prev) => (prev + 1) % images.length);
   const prevImage = () =>
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
 
