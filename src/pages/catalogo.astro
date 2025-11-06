@@ -8,7 +8,7 @@ import BtnLink from "../components/shared/BtnLink.astro";
 import CatalogoWithFilter from "../components/React/CatalogoWithFilter";
 
 // Asegúrate de que images sea del tipo Modelo[]
-const modelos: Modelo[] = images.map((modelo) => ({
+const modelos: any = images.map((modelo) => ({
   nombre: modelo.nombre,
   ciudad: modelo.ciudad,
   fotos: modelo.fotos.map((foto) => ({
