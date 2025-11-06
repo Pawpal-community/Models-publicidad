@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import GaleriaModal from './GaleriaModal';
-import { Image } from 'astro:assets';
+// import { Image } from 'astro:assets';
 import type { Modelo } from '../../utils/types';
 
 interface Props {
