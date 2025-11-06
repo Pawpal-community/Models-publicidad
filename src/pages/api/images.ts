@@ -18,7 +18,7 @@ export const GET: APIRoute = async () => {
     });
 
     const result = await cloudinary.search
-      .expression('folder:Events/*')
+      .expression('folder="Events"')
       .sort_by("public_id", "desc")
       .max_results(50)
       .execute();
