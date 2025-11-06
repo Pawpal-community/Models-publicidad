@@ -48,7 +48,7 @@ export default function AboutGallery() {
           <img
             key={i}
             src={img.url}
-            alt={img.alt}
+            alt={`foto de evento o activacion de models publicidad numero ${i + 1}`}
             loading="lazy"
             className="
               object-cover object-center

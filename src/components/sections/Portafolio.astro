@@ -2,6 +2,7 @@
 import Container from "../shared/Container.astro";
 import GradiantText from "../shared/GradiantText.astro";
 import AboutGallery from "../React/AboutGallery.tsx";
+import Button from "../shared/Button.astro";
 import Image from "astro/components/Image.astro";
 import Paragraph from "../shared/Paragraph.astro";
 import PortafolioSection from "../shared/Portafolio-section.astro";
@@ -74,15 +75,16 @@ import tropigas3 from "../../assets/portafolio/tropigas/tropigas-portafolio3.jpg
     />
   </ul>
 
-  <div class="mt-10">
+  <div class="mt-10 flex flex-col">
     <Paragraph className="text-center font-medium">
       Con ganas de ver más?
     </Paragraph>
-    <h3 class="text-xl sm:text-2xl font-semibold mb-4 text-center">
+    <h3 class="text-heading-1 text-xl sm:text-2xl font-semibold mb-4 text-center text">
       Galería de eventos y activaciones de models publicidad
     </h3>
     <AboutGallery
       client:only="react"
     />
+    <Button className="mt-10 max-w-[350px] self-center"/>
   </div>
 </Container>
