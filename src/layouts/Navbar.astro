@@ -2,30 +2,27 @@
 import Container from "../components/shared/Container.astro";
 import Navitem from "../components/shared/Navitem.astro";
 import BtnLink from "../components/shared/BtnLink.astro";
+import CtaButton from "../components/shared/CtaButton.astro";
 
 const navItems = [
-  {
-    href: "/",
-    text: "Home",
-  },
   // {
   //   href: "#solutions",
   //   text: "Soluciones",
   // },
   {
-    href: "#services",
-    text: "Servicios",
+    href: "/#benefits",
+    text: "Beneficios",
   },
   {
-    href: "#gallery",
+    href: "/#gallery",
     text: "Catalogo de Modelos",
   },
   {
-    href: "#faq",
+    href: "/#faq",
     text: "Preguntas Frecuentes",
   },
   {
-    href: "/Sobre-nosotros",
+    href: "/sobre-nosotros",
     text: "Sobre Nosotros",
   },
 ];
@@ -93,12 +90,13 @@ const navItems = [
         <div
           class="lg:min-w-max flex items-center sm:w-max w-full pb-6 lg:pb-0 border-b border-box-bg lg:border-0 px-6 lg:px-0"
         >
-          <BtnLink
+          <!-- <BtnLink
             text="Cotiza con nosotros"
             href="#cta"
             className="flex justify-center w-full sm:w-max"
             variant="primary"
-          />
+          /> -->
+          <CtaButton />
         </div>
       </div>
 
